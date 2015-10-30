@@ -2,12 +2,15 @@
 public class Luhn {
 	
 	public boolean valid(String num) {
-		return (f(1)*digitAt(num, 1) + f(2)*digitAt(num, 2) + f(3)*digitAt(num, 3) + 
-				f(4)*digitAt(num, 4) + f(5)*digitAt(num, 5)) % 10 == 0;
+		int sum = 0;
+		for (int i = 1; i < num.length() + 1; i++) {
+			sum += f(i) * digitAt(num, i);
+		}
+		return sum % 10 == 0;
 	}
 
 	private int digitAt(String num, int index) {
-		return new Integer((num.substring(index -1, index))).intValue();
+		return new Integer((num.substring(index - 1, index))).intValue();
 	} 
 	
 	private int f(int i) {
