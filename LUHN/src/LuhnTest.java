@@ -7,7 +7,7 @@ public class LuhnTest {
 	@Test
 	public void testLuhn() {
 		Luhn luhn = new Luhn();
-		assertTrue(luhn.valid("44321") == true);
+		assertTrue(luhn.valid("49321") == true);
 	}
 
 }
